@@ -92,6 +92,14 @@ function BottomTabNavigator() {
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
+      <BottomTab.Screen
+        name="TabTree"
+        component={ModalScreen}
+        options={{
+          title: 'Tab Tree',
+          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        }}
+      />
     </BottomTab.Navigator>
   );
 }

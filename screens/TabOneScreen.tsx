@@ -9,7 +9,7 @@ import styles from '../components/styles';
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
+      <Text style={styles.title}>Tache</Text>
       <TaskInput/>
       <TaskList/>
     </View>

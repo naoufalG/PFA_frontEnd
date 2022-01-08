@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, Pressable } from "react-native";
 import Button from "./Button";
 import styles from "./styles";
 import { tasksRef } from "../constants/reference";
@@ -52,9 +52,16 @@ export default class TaskListItem extends React.Component {
         />
 
         <View style={styles.TaskListItem_TextContainer}>
-          <Text style={[styles.TaskListItem_Text, checkedText]}>
-            {task.text}
-          </Text>
+          <Pressable
+            onPress={() => console.log("salam")}
+            style={({ pressed }) => ({
+              opacity: pressed ? 0.5 : 1,
+            })}
+          >
+            <Text style={[styles.TaskListItem_Text, checkedText]}>
+              {task.text}
+            </Text>
+          </Pressable>
         </View>
 
         {buttonRight}

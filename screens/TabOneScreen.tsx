@@ -10,7 +10,7 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
     <View style={styles.container}>
       <Text style={styles.title}>Tache</Text>
       <TaskInput/>
-      <TaskList/>
+      <TaskList />
     </View>
   );
 }

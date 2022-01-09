@@ -1,17 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
-import useCachedResources from './hooks/useCachedResources';
-import useColorScheme from './hooks/useColorScheme';
-import Navigation from './navigation';
+
 import Login from './screens/Login'
 import Home from './screens/Home'
+import TabProjectTaskList from './screens/TabProjectTaskList'
+
 
 const RootStack = createStackNavigator(
   {
     Login: Login,
-    Home: Home
+    Home: Home,
+    TabProjectTaskList: TabProjectTaskList
   },
   {
     initialRouteName: "Login",

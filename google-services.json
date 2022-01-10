@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "137865292577",
+    "firebase_url": "https://examnaoufal-default-rtdb.firebaseio.com",
+    "project_id": "examnaoufal",
+    "storage_bucket": "examnaoufal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:137865292577:android:b9d85c3373bb969c802c60",
+        "android_client_info": {
+          "package_name": "com.example.examnaoufal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "137865292577-e7nfk7n0jl7tsh94koalstoj1bm0uhco.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzCvXbW5fewvDGZEBCbGtb3AHmipYS5Go"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "137865292577-e7nfk7n0jl7tsh94koalstoj1bm0uhco.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:137865292577:android:422d69fcfeaf181d802c60",
+        "android_client_info": {
+          "package_name": "host.exp.exponent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "137865292577-p16mdgh3ni8kah4mtjhlniuu8f9kgu3g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "host.exp.exponent",
+            "certificate_hash": "9b413307ffde05e1075735f6cbc4dd8d941283b7"
+          }
+        },
+        {
+          "client_id": "137865292577-e7nfk7n0jl7tsh94koalstoj1bm0uhco.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzCvXbW5fewvDGZEBCbGtb3AHmipYS5Go"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "137865292577-e7nfk7n0jl7tsh94koalstoj1bm0uhco.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

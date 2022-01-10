@@ -1,27 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import Home from "./screens/Home";
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { StyleSheet, Text, View } from "react-native";
+import LoginScreen from "./screens/AuthScreens/LoginScreen";
+import SignupScreen from "./screens/AuthScreens/SignupScreen";
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
-import useCachedResources from './hooks/useCachedResources';
-import useColorScheme from './hooks/useColorScheme';
-import Navigation from './navigation';
-import Login from './screens/Login'
-import Home from './screens/Home'
-
 const RootStack = createStackNavigator(
   {
-    Login: Login,
-    Home: Home
+    Login: LoginScreen,
+    Signup: SignupScreen,
+    Home: Home,
   },
   {
     initialRouteName: "Login",
-    headerMode: 'none'
-    
+    headerMode: "none",
   }
 );
 
 const AppContainer = createAppContainer(RootStack);
 export default function App() {
-    return <AppContainer />;
-  
+  return <AppContainer />;
 }

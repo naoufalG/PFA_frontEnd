@@ -3,6 +3,7 @@ import { View, Text, Pressable } from "react-native";
 import Button from "./Button";
 import styles from "./styles";
 import { tasksRef } from "../constants/reference";
+import { withNavigation } from "react-navigation";
 
 export default class TaskListItem extends React.Component {
   toggleChecked = () => {
@@ -23,7 +24,6 @@ export default class TaskListItem extends React.Component {
   render() {
     const { task } = this.props;
     const checkedText = task.checked ? styles.TaskListItem_Checked : "";
-
     let buttonRight;
     if (task.checked) {
       buttonRight = (
@@ -53,7 +53,6 @@ export default class TaskListItem extends React.Component {
 
         <View style={styles.TaskListItem_TextContainer}>
           <Pressable
-            onPress={() => console.log("salam")}
             style={({ pressed }) => ({
               opacity: pressed ? 0.5 : 1,
             })}

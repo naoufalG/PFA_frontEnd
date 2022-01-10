@@ -1,26 +1,24 @@
+import Home from "./screens/Home";
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { StyleSheet, Text, View } from "react-native";
+import LoginScreen from "./screens/AuthScreens/LoginScreen";
+import SignupScreen from "./screens/AuthScreens/SignupScreen";
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
-
-import Login from './screens/Login'
-import Home from './screens/Home'
-import TabProjectTaskList from './screens/TabProjectTaskList'
-
-
 const RootStack = createStackNavigator(
   {
-    Login: Login,
+    Login: LoginScreen,
+    Signup: SignupScreen,
     Home: Home,
-    TabProjectTaskList: TabProjectTaskList
   },
   {
     initialRouteName: "Login",
-    headerMode: 'none'
-    
+    headerMode: "none",
   }
 );
 
 const AppContainer = createAppContainer(RootStack);
 export default function App() {
-    return <AppContainer />;
-  
+  return <AppContainer />;
 }

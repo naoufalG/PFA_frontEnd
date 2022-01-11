@@ -15,7 +15,7 @@ import FormInput from "../../components/Social/FormInput";
 import FormButton from "../../components/Social/FormButton";
 import SocialButton from "../../components/Social/SocialButton";
 import auth from "@react-native-firebase/auth";
-
+//LoginScreen
 const LoginScreen = ({ navigation }) => {
   //Set state for the credentials
   const [email, setEmail] = useState("");

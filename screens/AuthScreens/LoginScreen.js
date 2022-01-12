@@ -22,7 +22,7 @@ const LoginScreen = ({ navigation }) => {
   const [password, setPassword] = useState("");
 
   //Login function from the firebase user database
-
+  //check
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.text}>Login App</Text>

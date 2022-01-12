@@ -1,6 +1,6 @@
 import React from "react";
 import { TextInput } from "react-native";
-import { tasksRef, timeRef } from "../constants/reference";
+import { tasksRef, timeRef, tasksRefP } from "../constants/reference";
 import styles from "./styles";
 
 export default class TaskInput extends React.Component {
@@ -14,7 +14,8 @@ export default class TaskInput extends React.Component {
       timestamp: timeRef,
     };
     if (newTask.text.length) {
-      tasksRef.push(newTask);
+      if (this.props.page === "projet") tasksRefP.push(newTask);
+      else tasksRef.push(newTask);
       this.setState({ text: "" });
     }
   };
@@ -24,16 +25,30 @@ export default class TaskInput extends React.Component {
   };
 
   render() {
-    return (
-      <TextInput
-        placeholder="Add a new task..."
-        placeholderTextColor="#FFF"
-        underlineColorAndroid="transparent"
-        style={styles.TaskInput}
-        value={this.state.text}
-        onChangeText={this.handleChangeText}
-        onSubmitEditing={this.handleSubmit}
-      />
-    );
+    if (this.props.page === "projet") {
+      return (
+        <TextInput
+          placeholder="Add a new Project..."
+          placeholderTextColor="#FFF"
+          underlineColorAndroid="transparent"
+          style={styles.TaskInput}
+          value={this.state.text}
+          onChangeText={this.handleChangeText}
+          onSubmitEditing={this.handleSubmit}
+        />
+      );
+    } else {
+      return (
+        <TextInput
+          placeholder="Add a new task..."
+          placeholderTextColor="#FFF"
+          underlineColorAndroid="transparent"
+          style={styles.TaskInput}
+          value={this.state.text}
+          onChangeText={this.handleChangeText}
+          onSubmitEditing={this.handleSubmit}
+        />
+      );
+    }
   }
 }

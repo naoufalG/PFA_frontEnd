@@ -13,4 +13,6 @@ firebase.initializeApp(config);
 
 const rootRef = firebase.database().ref();
 export const tasksRef = rootRef.child("tasks");
+export const tasksRefP = rootRef.child("taskP");
+
 export const timeRef = firebase.database.ServerValue.TIMESTAMP;

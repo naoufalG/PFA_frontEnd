@@ -2,27 +2,43 @@ import React from "react";
 import { View, Text, Pressable } from "react-native";
 import Button from "./Button";
 import styles from "./styles";
-import { tasksRef } from "../constants/reference";
+import { tasksRef, tasksRefP } from "../constants/reference";
 import { withNavigation } from "react-navigation";
 
 export default class TaskListItem extends React.Component {
   toggleChecked = () => {
-    const { key, checked } = this.props.task;
-    tasksRef.child(key).update({ checked: !checked });
+    if (this.props.page === "tache") {
+      const { key, checked } = this.props.task;
+      tasksRef.child(key).update({ checked: !checked });
+    } else if (this.props.page === "projet") {
+      const { key, checked } = this.props.task;
+      tasksRefP.child(key).update({ checked: !checked });
+    }
   };
 
   toggleStarred = () => {
-    const { key, starred } = this.props.task;
-    tasksRef.child(key).update({ starred: !starred });
+    if (this.props.page === "tache") {
+      const { key, starred } = this.props.task;
+      tasksRef.child(key).update({ starred: !starred });
+    } else if (this.props.page === "projet") {
+      const { key, starred } = this.props.task;
+      tasksRefP.child(key).update({ starred: !starred });
+    }
   };
 
   deleteTask = () => {
-    const { key } = this.props.task;
-    tasksRef.child(key).remove();
+    if (this.props.page === "tache") {
+      const { key } = this.props.task;
+      tasksRef.child(key).remove();
+    } else if (this.props.page === "projet") {
+      const { key } = this.props.task;
+      tasksRefP.child(key).remove();
+    }
   };
 
   render() {
     const { task } = this.props;
+    const page = this.props.page;
     const checkedText = task.checked ? styles.TaskListItem_Checked : "";
     let buttonRight;
     if (task.checked) {

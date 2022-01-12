@@ -3,7 +3,7 @@ import { FlatList, View, Text, Button } from "react-native";
 import orderBy from "lodash/orderBy";
 import TaskListItem from "./TaskListItem";
 import styles from "./styles";
-import { tasksRef } from "../constants/reference";
+import { tasksRef, tasksRefP } from "../constants/reference";
 
 export default class TaskList extends React.Component {
   state = {
@@ -12,20 +12,35 @@ export default class TaskList extends React.Component {
   };
 
   componentDidMount() {
-    tasksRef.on("value", (snap) => {
-      const tasks = [];
-      snap.forEach((shot) => {
-        tasks.push({ ...shot.val(), key: shot.key });
+    if (this.props.page === "tache") {
+      tasksRef.on("value", (snap) => {
+        const tasks = [];
+        snap.forEach((shot) => {
+          tasks.push({ ...shot.val(), key: shot.key });
+        });
+        this.setState({ tasks, tasksLoading: false });
       });
-      this.setState({ tasks, tasksLoading: false });
-    });
+    } else if (this.props.page === "projet") {
+      tasksRefP.on("value", (snap) => {
+        const tasks = [];
+        snap.forEach((shot) => {
+          tasks.push({ ...shot.val(), key: shot.key });
+        });
+        this.setState({ tasks, tasksLoading: false });
+      });
+    }
   }
 
   renderItem = ({ item }) => {
-    return <TaskListItem task={item} />;
+    if (this.props.page === "tache") {
+      return <TaskListItem page={"tache"} task={item} />;
+    } else if (this.props.page === "projet") {
+      return <TaskListItem page={"projet"} task={item} />;
+    }
   };
 
   render() {
+    const typePage = this.props.page;
     const { tasks, tasksLoading } = this.state;
     const orderedTasks = orderBy(
       tasks,

@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   TaskInput: {
-    backgroundColor: "#4A90E2",
+    backgroundColor: "#4A90F2",
     height: 50,
     paddingLeft: 10,
     alignItems: "center",
